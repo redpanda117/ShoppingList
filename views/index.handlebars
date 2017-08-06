@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <!--area where the picture will go -->
+        <img src="../public/assets/img/shoppingCart.jpg" alt="picture of a shopping cart fill with food">
+    </div>
+
+
+    <div class="row">
+        <!--area where the items that need to shop for will go-->
+        <div class="col-md-6">
+            <h3>Need to Buy</h3>
+            <ul>
+                {{#each items}}
+                <li>
+                    <p>
+                        {{this.id}}{{this.item}}
+<!--need to figure out form action-->
+                        <form action="/{{this.id}}?_method=DELETE" method="POST">
+                            <button type="submit">Got It!</button>
+                        </form>
+                    </p>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <div class="col-md-6">
+            <h3>Got</h3>
+            <ul>
+                {{#each items}} {{#if this.got}}
+<!--figure out how to only include items that has already been bought-->
+                <li>
+                    <p>{{this.id}}.{{this.item_name}}</p>
+                </li>
+                {{/if}} {{/each}}
+            </ul>
+
+        </div>
+    </div>
+
+</div>

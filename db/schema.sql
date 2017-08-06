@@ -1,18 +1,10 @@
-CREATE DATABASE burger_db;
-USE burgers_db;
-CREATE TABLE burger(
+CREATE DATABASE shopping_db;
+USE shopping_db;
+CREATE TABLE items (
     id INTEGER(11) AUTO_INCREMENT NOT NULL,
-    burger_name VARCHAR(100),
-    devoured BOOLEAN DEFAULT False,
-    date TIMESTAMP,
+    item_name VARCHAR(100),
+    got BOOLEAN DEFAULT False,
+    date TIMESTAMP default CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
 );
 
-INSERT INTO burger (burger_name,devoured)
-VALUES ("BLT",False);
-
-INSERT INTO burger (burger_name,devoured)
-VALUES ("Cheeseburger",False);
-
-INSERT INTO burger (burger_name,devoured)
-VALUES ("Veggie Burger",True);
