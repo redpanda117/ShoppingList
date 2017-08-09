@@ -10,8 +10,7 @@
         <div class="col-md-6">
             <h3>Need to Buy</h3>
             <ul>
-                {{#each items}}
-                {{#unless this.got}}
+                {{#each items}} {{#unless this.got}}
                 <li>
                     <p>
                         {{this.id}}{{this.item}}
@@ -21,8 +20,7 @@
                         </form>
                     </p>
                 </li>
-                {{/unless}}
-                {{/each}}
+                {{/unless}} {{/each}}
             </ul>
         </div>
 
@@ -39,5 +37,13 @@
         </div>
     </div>
 
-    <div class = row></div>
+    <div class="row">
+        <form class="create-update-form" action="/" method="POST">
+            <div class="form-group">
+                <label>Item Name:</label>
+                <input type="text" name="name">
+            </div>
+            <button type="submit">Add Item to Shopping List</button>
+        </form>
+    </div>
 </div>
