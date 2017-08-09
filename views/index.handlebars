@@ -13,7 +13,7 @@
                 {{#each items}} {{#unless this.got}}
                 <li>
                     <p>
-                        {{this.id}}{{this.item}}
+                        {{this.id}}{{this.item_name}}
                         <form action="/{{this.id}}?_method=PUT" method="POST">
                             <input type="hidden" name="got" value="true">
                             <button type="submit">Got It!</button>

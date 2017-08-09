@@ -19,7 +19,7 @@ router.post("/", function(req, res) {
   list.insertOne([
     "item_name", "got"
   ], [
-    req.body.item_name, false
+    req.body.name, false
   ], function() {
     res.redirect("/");
   });
