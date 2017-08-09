@@ -11,15 +11,17 @@
             <h3>Need to Buy</h3>
             <ul>
                 {{#each items}}
+                {{#unless this.got}}
                 <li>
                     <p>
                         {{this.id}}{{this.item}}
-<!--need to figure out form action-->
                         <form action="/{{this.id}}?_method=PUT" method="POST">
+                            <input type="hidden" name="got" value="true">
                             <button type="submit">Got It!</button>
                         </form>
                     </p>
                 </li>
+                {{/unless}}
                 {{/each}}
             </ul>
         </div>
@@ -28,7 +30,6 @@
             <h3>Got</h3>
             <ul>
                 {{#each items}} {{#if this.got}}
-<!--figure out how to only include items that has already been bought-->
                 <li>
                     <p>{{this.id}}.{{this.item_name}}</p>
                 </li>
@@ -38,4 +39,5 @@
         </div>
     </div>
 
+    <div class = row></div>
 </div>
