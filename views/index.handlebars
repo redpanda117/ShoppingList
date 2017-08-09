@@ -4,32 +4,40 @@
         <img src="../public/assets/img/shoppingCart.jpg" alt="picture of a shopping cart fill with food">
     </div>
 
+    <div class="row">
+
+        <h2>Shopping List</h2>
+    </div>
 
     <div class="row">
         <!--area where the items that need to shop for will go-->
-        <div class="col-md-6">
+        <div class="col-md-6 pagination-centered">
             <h3>Need to Buy</h3>
             <ul>
                 {{#each items}} {{#unless this.got}}
                 <li>
-                    <p>
-                        {{this.id}}{{this.item_name}}
+                    <h3>
+
                         <form action="/{{this.id}}?_method=PUT" method="POST">
+                            
+                            <button type="submit" class="btn btn-success">✓</button>
+
+                            {{this.id}}.{{this.item_name}}
                             <input type="hidden" name="got" value="true">
-                            <button type="submit">Got It!</button>
+
                         </form>
-                    </p>
+                    </h3>
                 </li>
                 {{/unless}} {{/each}}
             </ul>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-6 pagination-centered">
             <h3>Got</h3>
             <ul>
                 {{#each items}} {{#if this.got}}
                 <li>
-                    <p>{{this.id}}.{{this.item_name}}</p>
+                    <h3>{{this.id}}.{{this.item_name}}</h3>
                 </li>
                 {{/if}} {{/each}}
             </ul>
@@ -38,12 +46,14 @@
     </div>
 
     <div class="row">
-        <form class="create-update-form" action="/" method="POST">
-            <div class="form-group">
-                <label>Item Name:</label>
-                <input type="text" name="name">
-            </div>
-            <button type="submit">Add Item to Shopping List</button>
-        </form>
+        <div class="col-md-12 pagination-centered">
+            <form class="create-update-form" action="/" method="POST">
+                <div class="form-group">
+                    <label>Item Name:</label>
+                    <input type="text" name="name">
+                </div>
+                <button type="submit" class="btn btn-primary">Add to Shopping List</button>
+            </form>
+        </div>
     </div>
 </div>
