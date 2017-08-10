@@ -1,11 +1,17 @@
 var mysql = require("mysql");
 
+var connection;
+
+if(process.env.JAWSDB_URL){
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
+}else{
 var connection = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: require("./password.js"),
   database: "shopping_db"
 });
+};
 
 //making sure that it is connecting to mySQL
 connection.connect(function(err) {
