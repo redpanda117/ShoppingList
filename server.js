@@ -12,9 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-//getting the static css file and img pic
-//app.use(express.static(__dirname + '/public/assets'));
-//app.use(express.static(__dirname + 'public'));
+//the css and image
 app.use(express.static("public"));
 
 // Override with POST having ?_method=DELETE
