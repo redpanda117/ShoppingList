@@ -2,6 +2,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
+var path = require("path");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -13,10 +14,11 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 //the css and image
-app.use(express.static("public"));
+//app.use(express.static("public"));
+app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
 //favicon 
-app.use(express.static("favicon.ico"));
+//app.use(express.static("favicon.ico"));
 
 // Override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));                       
