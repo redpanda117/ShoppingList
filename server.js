@@ -15,6 +15,9 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 //the css and image
 app.use(express.static("public"));
 
+//favicon 
+app.use(express.static("favicon.ico"));
+
 // Override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));                       
                        
