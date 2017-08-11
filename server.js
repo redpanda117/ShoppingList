@@ -14,7 +14,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 //the css and image
-app.use(express.static(path.join(__dirname, "/public"));
+app.use(express.static(path.join(__dirname, "/public")));
 //app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
 //favicon 
