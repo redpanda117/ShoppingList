@@ -1,6 +1,9 @@
 .pagination-centered{
     text-align: center;
 }
+#itemInput{
+   text-transform: capitalize; 
+}
 ul {
   list-style-type: none;
 }
